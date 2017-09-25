@@ -124,7 +124,8 @@ checkpython $INPUT_PYTHON_VERSION
 
 sudo apt-get update
 
-sudo apt-get install -y cmake build-essential curl libcurl4-openssl-dev libssl-dev uuid-dev python-dev python-smbus
+sudo apt-get install -y cmake build-essential curl libcurl4-openssl-dev libssl-dev uuid-dev python-dev python-smbus sense-hat
+
 
 if [[ $PYTHON_VERSION == 2.7 ]]; then
     sudo apt-get install -y python-pip
