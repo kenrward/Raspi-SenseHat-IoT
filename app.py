@@ -56,20 +56,19 @@ PROTOCOL = IoTHubTransportProvider.MQTT
 # "HostName=<host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>"
 telemetry = Telemetry()
 
-# if len(sys.argv) < 2:
-#     print ( "You need to provide the device connection string as command line arguments." )
-#     telemetry.send_telemetry_data(None, EVENT_FAILED, "Device connection string is not provided")
-#     sys.exit(0)
+if len(sys.argv) < 2:
+    print ( "You need to provide the device connection string as command line arguments." )
+    telemetry.send_telemetry_data(None, EVENT_FAILED, "Device connection string is not provided")
+    sys.exit(0)
 
-# def is_correct_connection_string():
-#     m = re.search("HostName=.*;DeviceId=.*;", CONNECTION_STRING)
-#     if m:
-#         return True
-#     else:
-#         return False
+ def is_correct_connection_string():
+    m = re.search("HostName=.*;DeviceId=.*;", CONNECTION_STRING)
+    if m:
+         return True
+    else:
+        return False
 
-# CONNECTION_STRING = sys.argv[1]
-CONNECTION_STRING = "HostName=ThunderBK.azure-devices.us;SharedAccessKeyName=iothubowner;SharedAccessKey=u8Bs+WzCeB4KWGgwna++KU5OH9qD6wPFx7MewLZ4jsY="
+CONNECTION_STRING = sys.argv[1]
 
 if not is_correct_connection_string():
     print ( "Device connection string is not correct." )
