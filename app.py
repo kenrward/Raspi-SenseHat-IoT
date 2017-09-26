@@ -203,8 +203,8 @@ def iothub_client_sample_run():
             if MESSAGE_SWITCH:
                 # send a few messages every minute
                 print ( "IoTHubClient sending %d messages" % MESSAGE_COUNT )
-                temperature = sensor.read_temperature()
-                humidity = sensor.read_humidity()
+                temperature = sense.temp
+                humidity = sense.humidity
                 msg_txt_formatted = MSG_TXT % (
                     temperature,
                     humidity)
